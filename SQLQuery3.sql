@@ -29,3 +29,11 @@ INSERT INTO employee_payroll VALUES
 (1,'Shubham',100000.00,'2021-11-22'),
 (2,'Prajwal',200000.00,'2020-01-11'),
 (3,'Gautam',300000.00,'2019-03-14')
+
+
+--------UC4-----------
+---Retrieve all data----
+
+
+SELECT * FROM employee_payroll;
+
