@@ -45,3 +45,12 @@ SELECT * FROM employee_payroll;
 SELECT Name, Startdate FROM employee_payroll WHERE Name='Shubham';
   SELECT * FROM employee_payroll WHERE StartDate between CAST('2019-03-14' as date) and GETDATE();
 
+
+--------------UC6------------------------
+----------- Add gender---------------
+
+
+ALTER TABLE employee_payroll ADD Gender CHAR(1);
+UPDATE employee_payroll SET Gender='M' WHERE id=1;
+SELECT * FROM employee_payroll;
+
