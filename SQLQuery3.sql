@@ -37,3 +37,11 @@ INSERT INTO employee_payroll VALUES
 
 SELECT * FROM employee_payroll;
 
+
+--------------UC5-----------------------
+---------Retrieve Specific Data-------
+
+
+SELECT Name, Startdate FROM employee_payroll WHERE Name='Shubham';
+  SELECT * FROM employee_payroll WHERE StartDate between CAST('2019-03-14' as date) and GETDATE();
+
