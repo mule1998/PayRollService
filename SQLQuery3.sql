@@ -85,10 +85,21 @@ EXEC sp_rename 'employee_payroll.Salary', 'BasicPay';
 ALTER TABLE employee_payroll ADD TaxablePay float, Deduction float,IncomeTax float,NetPay float;
 UPDATE employee_payroll SET Deduction = '4000' WHERE Name = 'Shubham';
 UPDATE employee_payroll SET Deduction = '3000' WHERE Name = 'Prajwal';
-UPDATE employee_payroll SET Deduction = '2000' WHERE Name = 'GautamS';
+UPDATE employee_payroll SET Deduction = '2000' WHERE Name = 'Gautam';
 UPDATE employee_payroll SET NetPay = (BasicPay-Deduction);
 UPDATE employee_payroll SET TaxablePay = '1000';
 UPDATE employee_payroll SET IncomeTax = '200';
+SELECT * FROM employee_payroll;
+
+
+-------------------UC10-----------------
+-----------Create duplicate of person-------
+
+
+INSERT INTO employee_payroll(id,Name,BasicPay,Startdate,Gender,PhoneNumber,Department,Address,TaxablePay,Deduction,IncomeTax,NetPay) VALUES(
+4,'Terissa','546789','2018/03/01','F','8989898989','Sales','Pune','1000','4000','200','567899');
+INSERT INTO employee_payroll(id,Name,BasicPay,StartDate,Gender,PhoneNumber,Department,Address,TaxablePay,Deduction,IncomeTax,NetPay) VALUES(
+5,'Terissa','546789','2018/03/01','F','8989898989','Marketing','Pune','1000','5000','200','567899');
 SELECT * FROM employee_payroll;
 
 
