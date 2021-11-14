@@ -77,3 +77,18 @@ ALTER TABLE employee_payroll ADD Address varchar(250) default 'baroda';
 SELECT * FROM employee_payroll;
 
 
+--------------------UC9-------------------------
+---RenameColumn name in existing table(Salary renamed as Basic pay)---
+
+
+EXEC sp_rename 'employee_payroll.Salary', 'BasicPay';
+ALTER TABLE employee_payroll ADD TaxablePay float, Deduction float,IncomeTax float,NetPay float;
+UPDATE employee_payroll SET Deduction = '4000' WHERE Name = 'Shubham';
+UPDATE employee_payroll SET Deduction = '3000' WHERE Name = 'Prajwal';
+UPDATE employee_payroll SET Deduction = '2000' WHERE Name = 'GautamS';
+UPDATE employee_payroll SET NetPay = (BasicPay-Deduction);
+UPDATE employee_payroll SET TaxablePay = '1000';
+UPDATE employee_payroll SET IncomeTax = '200';
+SELECT * FROM employee_payroll;
+
+
